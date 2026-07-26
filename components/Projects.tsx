@@ -6,6 +6,13 @@ import Section from './Section';
 
 const projects: Project[] = [
   {
+    title: 'EduSystem Tracker',
+    description: 'A financial and student management app for Zimbabwean tutors to track enrolled students, record payments, issue receipts, monitor outstanding balances, and keep tutoring income organized offline.',
+    tags: ['Tutoring', 'React', 'Capacitor', 'Fintech', 'Education'],
+    imageUrl: 'https://picsum.photos/seed/edusystem/600/400',
+    videoUrl: '/assets/videos/edusystem-tracker.mp4',
+  },
+  {
     title: 'Interactive Physics Lab',
     description: 'A browser-based physics lab with interactive simulations for refraction, springs, pendulums, diffraction, waves, strings, and projectile motion — built for STEM education when physical lab equipment is not accessible.',
     tags: ['Physics Education', 'React', 'Interactive Simulation', 'E-Learning'],
