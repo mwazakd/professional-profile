@@ -1,59 +1,38 @@
-# Personal Webpage
+# Professional Profile (GitHub Pages)
 
-A modern, responsive personal webpage built with React, TypeScript, and Tailwind CSS showcasing projects, research interests, teaching experience, and contact information.
+React + Vite personal/professional site, hosted separately from the academic Astro site on Cloudflare.
 
-## Features
-
-- 🎨 Modern, responsive design with Tailwind CSS
-- ⚛️ Built with React 19 and TypeScript
-- 🚀 Fast development with Vite
-- 📱 Mobile-friendly interface
-- 🌐 Deployed on GitHub Pages
+- **This site:** https://mwazakd.github.io/professional-profile/
+- **Academic site:** Cloudflare Pages (`mwazakd/mwazakd.github.io`)
 
 ## Local Development
 
 **Prerequisites:** Node.js 18+ and npm
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+npm run dev
+```
 
-2. Run the development server:
-   ```bash
-   npm run dev
-   ```
+Open [http://localhost:3000](http://localhost:3000).
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-## Build for Production
+## Build
 
 ```bash
 npm run build
 ```
 
-The built files will be in the `dist` directory.
+Output is in `dist/`.
 
 ## Deployment
 
-This project is configured to deploy automatically to GitHub Pages via GitHub Actions.
+Pushes to `main` deploy via GitHub Actions (`.github/workflows/deploy.yml`).
 
-### Automatic Deployment
+1. Repo **Settings → Pages → Source: GitHub Actions** (one-time)
+2. Push to `main`
+3. Site: https://mwazakd.github.io/professional-profile/
 
-1. Push your code to the `main` branch
-2. GitHub Actions will automatically build and deploy to GitHub Pages
-3. Your site will be available at `https://mwazakd.github.io`
-
-### Manual Deployment
-
-If you need to deploy manually:
-
-1. Build the project:
-   ```bash
-   npm run build
-   ```
-
-2. Push the `dist` folder contents to the `gh-pages` branch (or configure GitHub Pages to use the `dist` folder from the main branch)
+`vite.config.ts` uses `base: '/professional-profile/'` to match the project Pages path.
 
 ## Project Structure
 
@@ -62,20 +41,20 @@ If you need to deploy manually:
 ├── public/              # Static assets
 │   └── assets/         # Images and PDFs
 ├── .github/
-│   └── workflows/      # GitHub Actions workflows
-├── index.html          # HTML entry point
-├── index.tsx           # React entry point
-├── vite.config.ts      # Vite configuration
-└── package.json        # Dependencies and scripts
+│   └── workflows/      # GitHub Pages deploy
+├── index.html
+├── index.tsx
+├── vite.config.ts
+└── package.json
 ```
 
-## Technologies Used
+## Stack
 
-- **React 19** - UI framework
-- **TypeScript** - Type safety
-- **Vite** - Build tool and dev server
-- **Tailwind CSS** - Styling (via CDN)
+- React 19 + TypeScript
+- Vite
+- Tailwind CSS (CDN)
+- GitHub Pages via Actions
 
 ## License
 
-This project is private and personal.
+Private and personal.
