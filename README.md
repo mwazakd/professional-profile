@@ -1,9 +1,9 @@
-# Professional Profile (GitHub Pages)
+# Professional Portfolio
 
-React + Vite personal/professional site, hosted separately from the academic Astro site on Cloudflare.
+React + Vite professional portfolio, hosted on **Cloudflare Pages**.
 
-- **This site:** https://mwazakd.github.io/professional-profile/
-- **Academic site:** Cloudflare Pages (`mwazakd/mwazakd.github.io`)
+- **This site:** https://kdmwaza-portfolio.pages.dev
+- **Academic site:** https://mwazakd-github-io.pages.dev (`mwazakd/mwazakd.github.io`)
 
 ## Local Development
 
@@ -24,15 +24,18 @@ npm run build
 
 Output is in `dist/`.
 
-## Deployment
+## Deployment (Cloudflare Pages)
 
-Pushes to `main` deploy via GitHub Actions (`.github/workflows/deploy.yml`).
+Pushes to `main` deploy via GitHub Actions (`.github/workflows/deploy.yml`) to project **`kdmwaza-portfolio`**.
 
-1. Repo **Settings → Pages → Source: GitHub Actions** (one-time)
-2. Push to `main`
-3. Site: https://mwazakd.github.io/professional-profile/
+Required GitHub Actions secrets on this repo:
 
-`vite.config.ts` uses `base: '/professional-profile/'` to match the project Pages path.
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
+
+(Same values as on `mwazakd/mwazakd.github.io`.)
+
+Site URL: https://kdmwaza-portfolio.pages.dev
 
 ## Project Structure
 
@@ -41,7 +44,7 @@ Pushes to `main` deploy via GitHub Actions (`.github/workflows/deploy.yml`).
 ├── public/              # Static assets
 │   └── assets/         # Images and PDFs
 ├── .github/
-│   └── workflows/      # GitHub Pages deploy
+│   └── workflows/      # Cloudflare Pages deploy
 ├── index.html
 ├── index.tsx
 ├── vite.config.ts
@@ -53,7 +56,7 @@ Pushes to `main` deploy via GitHub Actions (`.github/workflows/deploy.yml`).
 - React 19 + TypeScript
 - Vite
 - Tailwind CSS (CDN)
-- GitHub Pages via Actions
+- Cloudflare Pages via Actions
 
 ## License
 
