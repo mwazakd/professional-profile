@@ -6,6 +6,14 @@ import Section from './Section';
 
 const projects: Project[] = [
   {
+    title: 'Interactive Physics Lab',
+    description: 'A browser-based physics lab with interactive simulations for refraction, springs, pendulums, diffraction, waves, strings, and projectile motion — built for STEM education when physical lab equipment is not accessible.',
+    tags: ['Physics Education', 'React', 'Interactive Simulation', 'E-Learning'],
+    imageUrl: 'https://picsum.photos/seed/physicslab/600/400',
+    videoUrl: '/assets/videos/pendulum.mp4',
+    liveUrl: 'https://interactive-physics-lab.pages.dev/',
+  },
+  {
     title: 'Water Quality Monitoring System',
     description: 'An automated water quality monitoring system for Zimbabwean water bodies built with Google Earth Engine. Automates the data processing pipeline by calculating monitoring indices and preprocessing satellite images for advanced water quality analysis.',
     tags: ['Google Earth Engine', 'JavaScript', 'Satellite Imagery', 'Data Processing'],

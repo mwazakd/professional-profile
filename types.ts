@@ -6,6 +6,7 @@ export interface Project {
   description: string;
   tags: string[];
   imageUrl: string;
+  videoUrl?: string;
   liveUrl?: string;
   sourceUrl?: string;
 }

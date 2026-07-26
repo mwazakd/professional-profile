@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import type { Project } from '../types';
 
 interface ProjectCardProps {
@@ -22,11 +21,47 @@ const ExternalLinkIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !project.videoUrl || !('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            void video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        }
+      },
+      { threshold: 0.45 }
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, [project.videoUrl]);
+
   return (
     <div className="bg-slate-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-sky-500/20 transition-all duration-300 transform hover:-translate-y-2 group">
       <div className="relative overflow-hidden">
-        <img src={project.imageUrl} alt={project.title} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" />
-        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
+        {project.videoUrl ? (
+          <video
+            ref={videoRef}
+            className="w-full h-56 object-cover"
+            src={project.videoUrl}
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label={`${project.title} preview`}
+          />
+        ) : (
+          <img src={project.imageUrl} alt={project.title} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" />
+        )}
+        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300 pointer-events-none"></div>
       </div>
       <div className="p-6">
         <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
