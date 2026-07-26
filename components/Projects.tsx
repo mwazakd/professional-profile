@@ -11,6 +11,7 @@ const projects: Project[] = [
     tags: ['Tutoring', 'React', 'Capacitor', 'Fintech', 'Education'],
     imageUrl: 'https://picsum.photos/seed/edusystem/600/400',
     videoUrl: '/assets/videos/edusystem-tracker.mp4',
+    liveUrl: 'https://edusystem-tracker.pages.dev/',
   },
   {
     title: 'Interactive Physics Lab',
