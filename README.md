@@ -26,16 +26,30 @@ Output is in `dist/`.
 
 ## Deployment (Cloudflare Pages)
 
-Pushes to `main` deploy via GitHub Actions (`.github/workflows/deploy.yml`) to project **`kdmwaza-portfolio`**.
+**Target URL:** https://kdmwaza-portfolio.pages.dev  
+**Project name:** `kdmwaza-portfolio`
 
-Required GitHub Actions secrets on this repo:
+### Recommended: Connect Git in Cloudflare Dashboard
+
+(Same approach as the academic site.)
+
+1. [Cloudflare Dashboard](https://dash.cloudflare.com/) → **Workers & Pages**
+2. Open project **`kdmwaza-portfolio`** (or **Create** → **Pages** → **Connect to Git** if it does not exist)
+3. Set the Git repo to **`mwazakd/professional-profile`**, branch **`main`**
+4. Build settings:
+   - Build command: `npm run build`
+   - Build output: `dist`
+   - Environment variable: `NODE_VERSION` = `20`
+5. Save and deploy
+
+If `kdmwaza-portfolio` is still linked to `mwazakd.github.io`, disconnect that repo first — academic hosting belongs on **`mwazakd-github-io`**.
+
+### Optional: GitHub Actions deploy
+
+`.github/workflows/deploy.yml` can deploy with Direct Upload if these repo secrets are set:
 
 - `CLOUDFLARE_API_TOKEN`
 - `CLOUDFLARE_ACCOUNT_ID`
-
-(Same values as on `mwazakd/mwazakd.github.io`.)
-
-Site URL: https://kdmwaza-portfolio.pages.dev
 
 ## Project Structure
 
