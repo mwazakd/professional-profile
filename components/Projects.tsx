@@ -34,6 +34,7 @@ const projects: Project[] = [
     description: 'An interactive 3D simulation of titration experiments for chemistry education. Part of a larger e-learning platform project designed to help students understand complex lab procedures when physical lab equipment is not accessible. Features real-time pH visualization and titration curve analysis.',
     tags: ['3D Simulation', 'E-Learning', 'Chemistry Education', 'WebGL'],
     imageUrl: '/assets/images/titration-simulator.png',
+    videoUrl: '/assets/videos/titration-lab.mp4',
     liveUrl: 'https://mwazakd.github.io/STEMAppDev/',
     sourceUrl: 'https://github.com/mwazakd/STEMAppDev',
   },
