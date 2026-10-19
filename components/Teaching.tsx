@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Section from './Section';
+import TeachingGallery from './TeachingGallery';
 
 interface TeachingSubject {
   title: string;
@@ -58,6 +59,7 @@ const Teaching: React.FC = () => {
             </div>
           ))}
         </div>
+        <TeachingGallery />
       </div>
     </Section>
   );
